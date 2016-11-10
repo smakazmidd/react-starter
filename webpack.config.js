@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 var PATHS = {
-  script: path.resolve(__dirname, 'client/src/script'),
+  script: path.resolve(__dirname, 'client/src/script/components'),
   build: path.resolve(__dirname, 'client/public/build')
 }
 
@@ -19,7 +19,8 @@ module.exports = {
   },
   module: {
     loaders: [{
-      test: /\.jsx?$/, loaders: ['babel?presets[]=es2015&presets[]=react&plugins[]=react-html-attrs']
+      test: /\.jsx?$/,
+      loaders: ['babel?presets[]=es2015&presets[]=react&plugins[]=react-html-attrs&plugins[]=transform-decorators-legacy&plugins[]=transform-class-properties']
     }, {
       test: /\.scss$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap']
     }, {

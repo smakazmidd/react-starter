@@ -1,13 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import '../../css/style.css'
-import reactLogo from '../../images/react.png'
-import {Router, Route, IndexRoute, Link, hashHistory} from 'react-router'
-import Page1 from './Page1'
-import Page2 from './Page2'
-import Page3 from './Page3'
-import MobXTodo from './MobXTodo'
-import Contacts from './Contacts'
+import '../../css/style.css';
+import reactLogo from '../../images/react.png';
+import {Router, Route, IndexRoute, Link, hashHistory} from 'react-router';
+import Page1 from './Page1';
+import Page2 from './Page2';
+import Page3 from './Page3';
+import MobXTodo from './MobXTodo';
+import Contacts from './Contacts';
 
 export default class App extends React.Component {
   render() {
@@ -33,6 +33,13 @@ export default class App extends React.Component {
   }
 }
 
+App.propTypes = {
+  children: React.PropTypes.oneOfType([
+    React.PropTypes.arrayOf(React.PropTypes.node),
+    React.PropTypes.node
+  ])
+};
+
 const routes = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
@@ -45,4 +52,4 @@ const routes = (
   </Router>
 );
 
-ReactDOM.render(routes, document.querySelector('#app-root'))
+ReactDOM.render(routes, document.querySelector('#app-root'));

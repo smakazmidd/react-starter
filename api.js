@@ -1,3 +1,4 @@
+/*eslint-env node*/
 var api = require('express').Router();
 var jsonfile = require('jsonfile');
 var path = require('path');
@@ -20,7 +21,7 @@ api.get('/contacts', (req,res) => {
     else {
       res.json([]);
     }
-  })
+  });
 });
 
 api.put('/contact', (req,res) => {
@@ -54,7 +55,7 @@ api.delete('/contact', (req,res) => {
       jsonfile.writeFile(filePath, contacts);
     }
     res.end();
-  })
+  });
 });
 
 module.exports = api;

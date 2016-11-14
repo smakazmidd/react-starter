@@ -20,7 +20,8 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.jsx?$/,
-      loaders: ['babel?presets[]=es2015&presets[]=react&plugins[]=react-html-attrs&plugins[]=transform-decorators-legacy&plugins[]=transform-class-properties']
+      loaders: ['babel?presets[]=es2015&presets[]=react&plugins[]=react-html-attrs&plugins[]=transform-decorators-legacy&plugins[]=transform-class-properties'],
+      exclude: /(node_modules|bower_components)/,
     }, {
       test: /\.scss$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap']
     }, {

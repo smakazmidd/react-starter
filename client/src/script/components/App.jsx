@@ -7,6 +7,7 @@ import Page1 from './Page1'
 import Page2 from './Page2'
 import Page3 from './Page3'
 import MobXTodo from './MobXTodo'
+import Contacts from './Contacts'
 
 export default class App extends React.Component {
   render() {
@@ -21,6 +22,8 @@ export default class App extends React.Component {
         <Link to="/page3/Hello%20World">Page 3</Link>
         &nbsp;
         <Link to="/todo">MobX Sample</Link>
+        &nbsp;
+        <Link to="/contacts">Contacts</Link>
         <section className="page">
           {this.props.children}
         </section>
@@ -37,6 +40,7 @@ const routes = (
       <Route path="/page2" component={Page2}></Route>
       <Route path="/page3/:param" component={Page3}></Route>
       <Route path="/todo" component={MobXTodo}></Route>
+      <Route path="/contacts" component={Contacts}></Route>
     </Route>
   </Router>
 );

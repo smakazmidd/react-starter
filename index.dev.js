@@ -29,5 +29,6 @@ var server = new WebpackDevServer(compiler, {
     errorDetails: true,
   }
 });
-server.listen(8080, "localhost", function () { console.log('Dev server listening on port 8080...') });
+
+//server.listen(8080, "localhost", function () { console.log('Dev server listening on port 8080...') });
 // server.close();

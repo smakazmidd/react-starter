@@ -1,7 +1,7 @@
-import {observable} from 'mobx'
+import {observable} from 'mobx';
 class Contact {
 
-  id;
+  id
   @observable firstName;
   @observable lastName;
 

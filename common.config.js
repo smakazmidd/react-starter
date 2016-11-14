@@ -1,7 +1,9 @@
+/*eslint-env node*/
+
 var express = require('express');
 var path = require('path');
 
-var api = require('./api');
+var api = require('./server/api');
 
 module.exports = {
   setupApp: function(app) {
@@ -25,7 +27,7 @@ module.exports = {
     app.use('/api', api);
 
     server.listen(8080, function(){
-      console.log('server listening on port 8080...')
-    })
+      console.log('server listening on port 8080...');
+    });
   }
-}
+};

@@ -1,5 +1,5 @@
-import {observable, action, computed} from 'mobx'
-import Todo from '../models/Todo'
+import {observable, action, computed} from 'mobx';
+import Todo from '../models/Todo';
 
 export class TodoStore {
 

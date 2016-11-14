@@ -1,8 +1,7 @@
 import * as React from 'react';
-import {observer} from 'mobx-react'
-import Todo from '../../models/Todo'
-import store from '../../stores/TodoStore'
-import classNames from 'classnames'
+import {observer} from 'mobx-react';
+import store from '../../stores/TodoStore';
+import classNames from 'classnames';
 
 @observer
 export default class MobXTodo extends React.Component {
@@ -26,7 +25,7 @@ export default class MobXTodo extends React.Component {
         <ul>
           {todos}
         </ul>
-        <label for="chkFiltered">Show Only Incomplete</label>
+        <label htmlFor="chkFiltered">Show Only Incomplete</label>
         <input id="chkFiltered" type="checkbox" onChange={() => store.toggleOnlyIncompleteTodos()} checked={store.showingOnlyIncompleteTodos}/>
       </div>
     );

@@ -1,5 +1,5 @@
-import {observable, action, computed} from 'mobx'
-import Contact from '../models/Contact'
+import {observable, action, computed} from 'mobx';
+import Contact from '../models/Contact';
 import 'whatwg-fetch';
 import Client from 'socket.io-client';
 
@@ -10,20 +10,14 @@ export class ContactsStore {
 
   @computed get reverseContacts(){
     return this.contacts.reverse();
-  };
+  }
 
   @action createContact({id, firstName, lastName}) {
     let contact = new Contact({id, firstName, lastName});
-    console.log(contact);
     this.contacts.push(contact);
   }
 
   addContact(firstName, lastName) {
-    var contactJson = JSON.stringify({
-      firstName,
-      lastName
-    });
-    console.log(contactJson);
     fetch('api/contact', {
       method:'PUT',
       headers: {
@@ -33,8 +27,6 @@ export class ContactsStore {
         firstName,
         lastName
       })
-    }).then((res) => {
-      //this.refreshStore();
     });
   }
 
@@ -59,15 +51,12 @@ export class ContactsStore {
 
     let client = new Client('/');
     client.on('connect', () => {
-      console.log('I am connected');
-    })
+      //connected to socket.io
+    });
 
     client.on('contactAdded', (contact) => {
       this.createContact(contact);
-      console.log('contact added', contact);
     });
-
-    client.on('welcome', (data) => console.log(data));
   }
 }
 

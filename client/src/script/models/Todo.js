@@ -1,4 +1,4 @@
-import {observable, action} from 'mobx'
+import {observable, action} from 'mobx';
 
 export default class Todo {
   id;
@@ -13,6 +13,5 @@ export default class Todo {
     this.id = Date.now();
     this.title = title;
     this.done = done;
-    console.log(done);
   }
 }

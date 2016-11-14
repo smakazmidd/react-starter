@@ -7,3 +7,7 @@ export default class Page3 extends React.Component {
     );
   }
 }
+
+Page3.propTypes = {
+  params: React.PropTypes.object
+};

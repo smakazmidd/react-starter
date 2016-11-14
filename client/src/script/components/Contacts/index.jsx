@@ -1,12 +1,10 @@
-import * as React from 'react'
-import {observable} from 'mobx'
-import {observer} from 'mobx-react'
-import Todo from '../../models/Todo'
-import store from '../../stores/ContactsStore'
-import classNames from 'classnames'
-import {Button, Glyphicon} from 'react-bootstrap'
-import ContactList from './ContactList'
-import AddContact from './AddContact'
+import * as React from 'react';
+import {observable} from 'mobx';
+import {observer} from 'mobx-react';
+import store from '../../stores/ContactsStore';
+import {Button, Glyphicon} from 'react-bootstrap';
+import ContactList from './ContactList';
+import AddContact from './AddContact';
 
 @observer
 export default class Contacts extends React.Component {
@@ -28,7 +26,6 @@ export default class Contacts extends React.Component {
   }
 
   addContact() {
-    console.log('test');
     this.addingNewContact = true;
   }
 

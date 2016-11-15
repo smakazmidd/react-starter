@@ -2,7 +2,7 @@
 var api = require('express').Router();
 var jsonfile = require('jsonfile');
 var path = require('path');
-var filePath = path.resolve(__dirname, 'data/contacts.json');
+var filePath = path.resolve(__dirname, '../data/contacts.json');
 var bodyParser = require('body-parser');
 
 api.use(bodyParser.urlencoded({ extended: false }));
